@@ -4,17 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TeaShop {
+    // stock de thés disponibles
     private final Map<String, Tea> availableTeas = new HashMap<>();
     private int waterTemperature;
 
+    // initialise la température de l'eau par défaut
     public TeaShop(int defaultWaterTemperature) {
         this.waterTemperature = defaultWaterTemperature;
     }
 
+    // ajoute un thé au stock
     public void addTea(Tea tea) {
         availableTeas.put(tea.getName().toLowerCase(), tea);
     }
 
+    // prépare une tasse de thé en vérifiant si le thé est disponible dans le 
     public TeaCup prepareTea(String teaName) {
         Tea tea = availableTeas.get(teaName.toLowerCase());
         if (tea == null) {
